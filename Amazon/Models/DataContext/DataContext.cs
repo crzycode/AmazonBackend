@@ -10,5 +10,8 @@ namespace Amazon.Models.DataContext
 
         }
         public DbSet<A_Users> users { get; set; }
+        public DbSet<A_Products> Products { get; set; }
+        public DbSet<A_Pincode> pincodes { get; set; }
+
     }
 }
