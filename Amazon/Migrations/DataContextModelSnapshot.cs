@@ -37,7 +37,7 @@ namespace Amazon.Migrations
                     b.Property<string>("A_District")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("A_Isacive")
+                    b.Property<int>("A_Isactive")
                         .HasColumnType("int");
 
                     b.Property<string>("A_Iso2")
@@ -76,8 +76,8 @@ namespace Amazon.Migrations
                     b.Property<string>("A_Model_number")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("A_Price")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<double>("A_Price")
+                        .HasColumnType("float");
 
                     b.Property<string>("A_Product_dimensions")
                         .HasColumnType("nvarchar(max)");

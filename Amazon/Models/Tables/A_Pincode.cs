@@ -16,6 +16,6 @@ namespace Amazon.Models.Tables
         public string A_District { get; set; }
         public int A_Phone_code { get; set; }
         public string A_Iso2 { get; set; }
-        public int A_Isacive { get; set; } = 1;
+        public int A_Isactive { get; set; } = 1;
     }
 }

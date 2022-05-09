@@ -8,7 +8,7 @@ namespace Amazon.Models.Tables
         public int A_Product_id { get; set; }
         public string A_Product_name { get; set; }
         public string A_Category { get; set; }
-        public string A_Price { get; set; }
+        public double A_Price { get; set; }
         public string A_Quantity { get; set; }
         public string A_Model_number { get; set; }
         public string A_About { get; set; }
