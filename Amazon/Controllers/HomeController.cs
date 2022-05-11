@@ -2,6 +2,7 @@
 using Amazon.Models.Tables;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using System.Linq;
 
@@ -16,8 +17,37 @@ namespace Amazon.Controllers
         {
             db = _db;
         }
+        [HttpGet]
+        public dynamic getallproduct()
+        {
+            var mostUsed = db.Products.Take(10).ToList(); 
+            var data = JsonConvert.SerializeObject(mostUsed);
+            return data;
+        }
+        [HttpGet("{a},{b}")]
+        /*Between with Sql and entity framework*/
+        public dynamic getproductbetween(int a, int b)
+        {
+            /*From Sql Command*/
+            /* var mostUsed = db.Products.FromSqlRaw("select top 2 * from Products where A_Price between '"+a+"' and '"+b+"' ");
+             var data = JsonConvert.SerializeObject(mostUsed);
+             return data;*/
+
+            /*From Entity Framework*/
+            /*var most = db.Products.Take(5).ToList().Where(c => c.A_Price >= a && c.A_Price <= b);
+              var data = JsonConvert.SerializeObject(most);   
+              return data;*/
+
+            /*From Linq*/
+            var data = (from d in db.Products
+                        where (d.A_Price >= a) && (d.A_Price <= b)
+                        select d).Take(2).ToList();
+            var result = JsonConvert.SerializeObject(data); 
+                     
+            return result;
+        }
         [HttpGet("{id}")]
-        public dynamic getproduct(int id)
+        public dynamic getproductbyid(int id)
         {
             string msg;
             A_Products p = new A_Products();

@@ -13,5 +13,7 @@ namespace Amazon.Models.DataContext
         public DbSet<A_Products> Products { get; set; }
         public DbSet<A_Pincode> pincodes { get; set; }
 
+        public DbSet<A_Review> reviews { get; set; }
+        public DbSet<A_Comment> comments { get; set; }
     }
 }

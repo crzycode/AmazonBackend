@@ -19,6 +19,8 @@ namespace Amazon.Models.Tables
         public string A_Image { get; set; }
         public string A_Varient { get; set; }
         public string A_Product_url { get; set; }
+        public int A_Total_like { get; set; }
+        public int A_Total_view { get; set; }
 
     }
 }

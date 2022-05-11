@@ -3,14 +3,16 @@ using Amazon.Models.DataContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Amazon.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20220511160624_updatecomment")]
+    partial class updatecomment
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -120,12 +122,6 @@ namespace Amazon.Migrations
 
                     b.Property<string>("A_Tech_details")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("A_Total_like")
-                        .HasColumnType("int");
-
-                    b.Property<int>("A_Total_view")
-                        .HasColumnType("int");
 
                     b.Property<string>("A_Varient")
                         .HasColumnType("nvarchar(max)");
